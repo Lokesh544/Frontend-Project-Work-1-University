@@ -44,4 +44,60 @@ body {
   /* background-image: url("images/home_background.jpg"); */
   display: flex;
   color: whitesmoke;
+  justify-content: center;
+}
+#shop_1,
+#shop_2 {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+}
+.shop_item {
+  margin: 1rem 4rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+}
+.shop_item img {
+  /* max-width: 60%; */
+  margin: 3rem;
+  border: 0.5rem solid;
+  border-radius: 30px;
+}
+.shop_item h3 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+.shop_item li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+.shop_item button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  /* width: 10%; */
+  font-size: 1.5rem;
+  font-weight: 600;
+  align-self: center;
+  background: #fff86e;
+  background-image: linear-gradient(to bottom, #fff86e, #fff86b);
+  border: none;
+  border-radius: 28px;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.shop_item button:hover {
+  background: #ebe378;
+  background-image: linear-gradient(to bottom, #ebe378, #c9c35b);
+  text-decoration: none;
+}
+.shop_item button:active {
+  background: #c5bf66;
+  background-image: linear-gradient(to bottom, #c5bf66, #a39f4a);
+  text-decoration: none;
 }
