@@ -1,0 +1,39 @@
+@media screen and (max-width: 900px) {
+  .home_text {
+    width: 100%;
+  }
+  #shop_1 {
+    display: none;
+  }
+  #shop_2 {
+    display: flex;
+  }
+  .shop_item img {
+    /* max-width: 60%; */
+    margin: 0.25rem;
+    border: 0.25rem solid rgb(255 200 0);
+    border-radius: 30px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .nav_button a {
+    font-size: 1rem;
+  }
+  .shop_item {
+    margin: 1rem 1rem;
+  }
+  .shop_item h3 {
+    font-size: 1.25rem;
+  }
+  .shop_item div {
+    display: none;
+  }
+  #about h2 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .nav_button a {
+    font-size: 0.75rem;
+  }
+}
