@@ -89,42 +89,19 @@
               Fiber Badminton Rackets Set with Grip
             </h3>
             <div>
-              <ul>
-                <li>Senston N80 (2 racket)</li>
-                <li>5U(75g-79g)</li>
-                <li>G4 Grip</li>
-                <li>The balance point: 295+-3MM</li>
-                <li>Lengh: 675MM</li>
-                <li>Prestring tension: 24LBS-26LBS</li>
-              </ul>
+              <p>Senston N80 (2 racket)</p>
+              <p>5U(75g-79g)</p>
+              <p>G4 Grip</p>
+              <p>The balance point: 295+-3MM</p>
+              <p>Lengh: 675MM</p>
+              <p>Prestring tension: 24LBS-26LBS</p>
             </div>
-            <button>More</button>
+            <button onclick="toggle_details_menu()">More</button>
           </div>
         </div>
       </div>
       <div id="shop_2">
-        <div class="shop_3">
-          <div class="shop_item">
-            <img
-              src="https://m.media-amazon.com/images/I/71-2Z5rNG0L._AC_SX679_.jpg"
-            />
-            <h3>
-              Senston N80-2 Pack Badminton Racquet, Professional Full Carbon
-              Fiber Badminton Rackets Set with Grip
-            </h3>
-            <div>
-              <ul>
-                <li>Senston N80 (2 racket)</li>
-                <li>5U(75g-79g)</li>
-                <li>G4 Grip</li>
-                <li>The balance point: 295+-3MM</li>
-                <li>Lengh: 675MM</li>
-                <li>Prestring tension: 24LBS-26LBS</li>
-              </ul>
-            </div>
-            <button>More</button>
-          </div>
-        </div>
+        <div class="shop_3"></div>
       </div>
     </div>
     <div
@@ -167,77 +144,91 @@
         badmon!
       </h2> -->
     </div>
-    <div id="item_details">
+
+    <div id="item_details" style="display: none" onclick="check_bounds()">
       <div class="item_details_top_buffer"></div>
       <div class="item_details_main">
-        <h1>RACKETS</h1>
-        <h2>
-          Senston N80-2 Pack Badminton Racquet, Professional Full Carbon Fiber
-          Badminton Rackets Set with Grip
-        </h2>
-        <img src="rackets.jpg" width="400px" />
-        <h3>
-          Visit the Senston Store
-          <br />
-          4.4 out of 5 stars 622 ratings | 9 answered questions
-          <br />
-          List Price: $89.99
-          <br />
-          Price: $65.95
-          <br />
-          You Save: $24.04 (27%)
-        </h3>
-        <br />
-        <div class="des">
-          <h2>
-            ABOUT Size One Size
-            <br />
-            Brand Senston
-            <br />
-            Grip Size 3 3/4 inches
-            <br />Sport Type Badminton Material Carbon Fiber <br />Skill Level
-            Intermediate <br />Frame Material Carbon Fiber
+        <div style="display: flex">
+          <h1>
+            Senston N80-2 Pack Badminton Racquet, Professional Full Carbon Fiber
+            Badminton Rackets Set with Grip
+          </h1>
+          <div style="flex-grow: 1; flex-shrink: 1"></div>
+          <h2
+            class="item_details_main_close_button"
+            onclick="toggle_details_menu()"
+          >
+            ❌
           </h2>
         </div>
-
-        <a
-          href="https://www.amazon.com/dp/B07N6685X6?_encoding=UTF8&psc=1&ref_=cm_sw_r_cp_ud_dp_J2BMPSRNSRER4GPPPT37"
-          target="_blank"
-          ><h1>>SHOP NOW</h1></a
-        >
-
-        <h2>
-          Senston N90 Badminton Racket, 6U Lightweight Badminton Racquet,
-          Professional 100% Full Carbon Badminton Racket with Grip Visit the
-          Senston Store 4.2 4.2 out of 5 stars 15 ratings Price: $41.99 Color:
-          Pure Pink
-        </h2>
-        <img src="pink.jpg" width="400px" />
-        <h3>
-          Visit the Senston Store
-          <br />
-          4.2 out of 5 stars 15 ratings
-          <br />Price: $41.99
-        </h3>
-        <h2>
-          ABOUT
-          <br />
-          Size One Size
-          <br />
-          Brand Senston
-          <br />Grip Size G4 Sport Type Badminton <br />Material Carbon Fiber
-          <br />Skill Level Intermediate <br />Frame Material Carbon Fiber
-        </h2>
-        <a
-          href="https://www.amazon.com/dp/B0BTD1F657?_encoding=UTF8&ref_=cm_sw_r_cp_ud_dp_PYTJ1JR3B409JWT0DCSD&th=1"
-          target="_blank"
-          ><h1>SHOP NOW</h1></a
-        >
-        <div class="homi">
-          <a href="homepage.html"> <h1>Go to home</h1></a>
+        <div style="display: flex; margin-top: 2rem">
+          <div>
+            <img
+              src="https://m.media-amazon.com/images/I/71-2Z5rNG0L._AC_SX679_.jpg"
+            />
+            <div class="item_details_main_button">
+              <a href="https://www.amazon.com/dp/B07N6685X6" target="_blank"
+                >Shop Now</a
+              >
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Size: One Size</p>
+              <p>Brand: Senston</p>
+              <p>Grip Size: 3 3/4 inches</p>
+              <p>Sport Type: Badminton</p>
+              <p>Material: Carbon Fiber</p>
+              <p>Skill Level: Intermediate</p>
+              <p>Frame Material: Carbon Fiber</p>
+              <p>Shaft Material: Carbon Fiber</p>
+              <p>Age Range: Adult</p>
+            </div>
+            <h2 style="font-size: 1.75rem; font-weight: boldder">
+              Price: $89.99
+            </h2>
+            <p>
+              RACKET PARAMETER: Senston N80 (2 racket) / 5U(75g-79g)/ G4 Grip/
+              The balance point: 295+-3MM/ Lengh:675MM/ Prestring tension:
+              24LBS-26LBS"
+            </p>
+            <p>
+              100% FULL CARBON FIBER MATERIAL: Senston N80 is made of full
+              carbon fiber frame and shaft. Racket weight unstrung 75 grams, it
+              is light. You can enjoy the badminton game longer and do not have
+              shoulder pain caused by other heavier racket. It fell better when
+              you playing. Carbon Fiber materials also enhance the strength of
+              the racket, reduce to the risk of frame deformation"
+            </p>
+            <p>
+              SOLID CONSTRUCTION: The racket has SOLID construction with
+              ONE-PIECE design outside and built-in T-joint inside. It have been
+              further improve the STABILITY, achieve high-precision control
+              performance. It also avoid the deformation caused by playing
+              badminton, make racket more stable, play unparalleled power. The
+              isometric square head shape frame structure and nanometer material
+              enable it endure high pounds string, which can reach 30 pounds"
+            </p>
+            <p>
+              PERFECT DESIGNED DETAILS: the design of cone cover make the racket
+              more in conformity with scientific theory of fluid dynamics to
+              enhance the flexibility of controling the ball. Non-slip handle
+              grip improve comfort, not easy to slide. Special and Powerful
+              T-Joint Inside Design further improved the stability, achieve
+              high-precision control performance. It also avoid the deformation
+              caused by playing badminton, make racket more stable, play
+              unparalleled power"
+            </p>
+            <p>
+              CUSTOMER SERVICE: If you have any problems after the purchase, you
+              can feel free to contact us in any time."
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="shop_items.js"></script>
+    <script src="item_details.js"></script>
   </body>
 </html>

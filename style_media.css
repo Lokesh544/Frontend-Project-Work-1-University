@@ -9,10 +9,12 @@
     display: flex;
   }
   .shop_item img {
-    /* max-width: 60%; */
     margin: 0.25rem;
     border: 0.25rem solid rgb(255 200 0);
     border-radius: 30px;
+  }
+  .item_details_main img {
+    height: 25vh;
   }
 }
 @media screen and (max-width: 420px) {
