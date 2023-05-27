@@ -1,58 +1,49 @@
-const shop_1 = document.getElementsByClassName("shop_1")[0];
-const shop_2 = document.getElementsByClassName("shop_2")[0];
-const shop_3 = document.getElementsByClassName("shop_3")[0];
-const shop_1_list = [];
-const shop_2_list = [];
-const shop_3_list = [];
+const shop_items_main = document.getElementsByClassName("shop_items_main")[0];
+const shop_items = document.getElementsByClassName("shop_items")[0];
 
-const make_shop_item = (data, data_id, id) => {
+function set_shop_items(shop_id) {
+  let data;
+  switch (shop_id) {
+    case 1:
+      data = data_1;
+      break;
+    case 2:
+      data = data_2;
+      break;
+    case 3:
+      data = data_3;
+      break;
+    case 4:
+      data = data_4;
+      break;
+    case 5:
+      data = data_5;
+      break;
+    case 6:
+      data = data_6;
+      break;
+    case 7:
+      data = data_7;
+      break;
+  }
+  let shop_items_list = [];
+  for (let i = 0; i < data.length; i++) {
+    shop_items_list.push(get_shop_item(data[i], shop_id, i));
+  }
+  shop_items_main.classList.remove("hidden");
+  shop_items.innerHTML = shop_items_list.join("");
+  shop_items.scrollIntoView();
+}
+
+function get_shop_item(data, data_id, id) {
   return `
-<div class="shop_item">
-  <img
-    src="${data.img}"
-  />
-  <h3>
-    ${data.title}
-  </h3>
-  <div>
-    <p>${
-      data.min_discription
-        ? data.min_discription.join("</p><p>")
-        : data.details
-        ? item_details_to_string(data.details)
-        : ""
-    }</p>
-  </div>
-  <button onclick="toggle_details_menu(${data_id}, ${id})">More</button>
-</div>
-`;
-};
-const item_details_to_string = (details) => {
-  const t = [];
-  for (let i of Object.entries(details)) {
-    t.push(`${i[0]}: ${i[1]}`);
-  }
-  return t.join("</p><p>");
-};
-
-for (let i = 0; i < data_1.length; i++) {
-  shop_1_list.push(make_shop_item(data_1[i], 1, i));
+          <div class="shop_item" onclick="set_item_details(${data_id}, ${id})">
+            <img
+              src="${data.img}"
+            />
+            <h3>
+              ${data.title}
+            </h3>
+          </div>
+          `;
 }
-for (let i = 0; i < data_2.length; i++) {
-  if (shop_2_list.length >= shop_1_list.length) {
-    shop_1_list.push(make_shop_item(data_2[i], 2, i));
-  } else {
-    shop_2_list.push(make_shop_item(data_2[i], 2, i));
-  }
-}
-
-for (let i = 0; i < data_1.length; i++) {
-  shop_3_list.push(make_shop_item(data_1[i], 1, i));
-}
-for (let i = 0; i < data_2.length; i++) {
-  shop_3_list.push(make_shop_item(data_2[i], 2, i));
-}
-
-shop_1.innerHTML = shop_1_list.join("");
-shop_2.innerHTML = shop_2_list.join("");
-shop_3.innerHTML = shop_3_list.join("");

@@ -1,7 +1,42 @@
 :root {
-  --main-color: #8f2336;
-  --text-color: #fff;
-  --bg-color: #9b9a9a;
+  --main-color: rgb(143, 35, 54);
+  --text-color: rgb(255, 255, 255);
+  --bg-color: rgb(0, 0, 0);
+  /* --home-bg-img-url: url("images/home_background.jpg"); */
+  --home-bg-img-url: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/67876740851429.578fa00f361e8.jpg");
+
+  /* Navigation Bar */
+  --nav-bg-color: rgba(0, 0, 0, 0.1);
+  --nav-box-shadow-color: rgba(50, 15, 55, 0.1);
+  --nav-text-color: goldenrod;
+  --nav-text-color-hover: rgb(247, 203, 94);
+  --nav-text-color-active: rgb(172, 147, 85);
+
+  /* Scrollbar */
+  --scrollbar-bg-color: darkgrey;
+  --scrollbar-outline-color: slategrey;
+
+  /* Shop */
+  --shop-bg-img-url: url("images/background.svg");
+
+  /* Shop Items */
+  --shop-items-bg-img-url: var(--shop-bg-img-url);
+
+  /* Shop Item Button */
+  --shop-item-bg-color: whitesmoke;
+  --shop-item-bg-color-hover: rgb(231, 231, 231);
+  --shop-item-bg-color-active: rgb(199, 199, 199);
+
+  /* Item Details */
+  --item-details-bg-color: rgb(56, 56, 56);
+  --item-details-text-color: whitesmoke;
+  --item-details-shop-button-color: var(--nav-text-color);
+  --item-details-shop-button-color-hover: var(--nav-text-color-hover);
+  --item-details-shop-button-color-active: var(--nav-text-color-active);
+
+  /* About Us */
+  --about-text-color: black;
+  --about-bg-img-url: url("https://media.istockphoto.com/id/1304225026/photo/top-view-of-mobile-phone-glasses-pen-and-notebook-written-with-about-us-on-wooden-background.jpg?s=612x612&w=0&k=20&c=YhbAlzZONGfWt-Qm5W10Z0-Z8waHkblhtZEbRh4E0bM=");
 }
 html {
   width: 100%;
@@ -14,7 +49,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: var(--bg-color);
   /* scroll-snap-type: y mandatory; */
   scroll-snap-type: y proximity;
 }
@@ -25,14 +60,15 @@ h1 {
 /* Scroolbar */
 body::-webkit-scrollbar {
   width: 0.5em;
+  height: 0.5em;
 }
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
+  background-color: var(--scrollbar-bg-color);
   border-radius: 5px;
-  outline: 1px solid slategrey;
+  outline: 1px solid var(--scrollbar-outline-color);
 }
 
 /* Page Section */
@@ -50,10 +86,16 @@ body::-webkit-scrollbar-thumb {
   transition: 0.2s ease-out;
 }
 #nav.shadow {
-  /* background: var(--bg-color); */
-  background: rgba(0, 0, 0, 0.13);
-  box-shadow: 4px 4px 20px rgba(50, 15, 55, 0.1);
+  background: var(--nav-bg-color);
+  box-shadow: 4px 4px 20px var(--nav-box-shadow-color);
   transition: 0.5s ease;
+}
+#nav .nav_div .nav_div {
+  height: 15vh;
+  transition: height 0.5s;
+}
+#nav.shadow .nav_div .nav_div {
+  height: 5vh;
 }
 #nav img {
   height: 5vw;
@@ -74,22 +116,21 @@ body::-webkit-scrollbar-thumb {
   align-self: center;
 }
 .nav_button a {
-  color: goldenrod;
+  color: var(--nav-text-color);
   font-weight: 1000;
   text-decoration: none;
   font-size: 1.5rem;
 }
 .nav_button a:hover {
-  color: rgb(247, 203, 94);
+  color: var(--nav-text-color-hover);
 }
 .nav_button a:active {
-  color: rgb(172, 147, 85);
+  color: var(--nav-text-color-active);
 }
 
 /* Home Page */
 .home {
-  /* background-image: url("images/home_background.jpg"); */
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/67876740851429.578fa00f361e8.jpg");
+  background-image: var(--home-bg-img-url);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: 30%;
@@ -109,7 +150,7 @@ body::-webkit-scrollbar-thumb {
 /* Shop Page */
 .shop {
   /* color: rgb(255 217 30); */
-  background-image: url("images/background.svg");
+  background-image: var(--shop-bg-img-url);
 }
 .shop .item {
   margin-top: 2rem;
@@ -117,19 +158,19 @@ body::-webkit-scrollbar-thumb {
   height: 39vh;
   display: flex;
   flex-direction: column;
-  border: 5px solid whitesmoke;
-  background-color: whitesmoke;
+  border: 5px solid var(--shop-item-bg-color);
+  background-color: var(--shop-item-bg-color);
   border-radius: 10px;
   transition-property: "background", "border-color";
   transition-duration: 0.1s;
 }
 .shop .item:hover {
-  background: #e7e7e7;
-  border-color: #e7e7e7;
+  background: var(--shop-item-bg-color-hover);
+  border-color: var(--shop-item-bg-color-hover);
 }
 .shop .item:active {
-  background: #c7c7c7;
-  border-color: #c7c7c7;
+  background: var(--shop-item-bg-color-active);
+  border-color: var(--shop-item-bg-color-active);
 }
 .shop .item img {
   height: 30vh;
@@ -141,25 +182,29 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Shop Items */
+.shop_items_main {
+  background-image: var(--shop-items-bg-img-url);
+}
 .shop_items_page {
   height: 90vh;
   overflow-x: scroll;
 }
 .shop_items_page::-webkit-scrollbar {
+  width: 0.5em;
   height: 0.5em;
 }
 .shop_items_page::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .shop_items_page::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
+  background-color: var(--scrollbar-bg-color);
   border-radius: 5px;
-  outline: 1px solid slategrey;
+  outline: 1px solid var(--scrollbar-outline-color);
 }
 .shop_items {
   display: flex;
   height: 88vh;
-  width: 100vw;
+  width: 99vw;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
@@ -170,13 +215,14 @@ body::-webkit-scrollbar-thumb {
   height: 39vh;
   display: flex;
   flex-direction: column;
-  border: 5px solid whitesmoke;
-  background-color: whitesmoke;
+  border: 5px solid var(--shop-item-bg-color);
+  background-color: var(--shop-item-bg-color);
   border-radius: 10px;
   transition-property: "background", "border-color";
   transition-duration: 0.1s;
 }
 .shop_item img {
+  height: 30vh;
   border-radius: 30px;
 }
 .shop_item h3 {
@@ -184,90 +230,86 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 .shop_item:hover {
-  background: #e7e7e7;
-  border-color: #e7e7e7;
+  background: var(--shop-item-bg-color-hover);
+  border-color: var(--shop-item-bg-color-hover);
 }
 .shop_item:active {
-  background: #c7c7c7;
-  border-color: #c7c7c7;
+  background: var(--shop-item-bg-color-active);
+  border-color: var(--shop-item-bg-color-active);
 }
 
 /* Item Details Page */
-#item_details {
-  /* display: none; */
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  background-image: radial-gradient(goldenrod, rgb(0, 0, 0, 0.8) 80%);
-  color: whitesmoke;
-}
-.item_details_top_buffer {
-  height: 10%;
+.item_details {
+  background-color: var(--item-details-bg-color);
+  color: var(--item-details-text-color);
 }
 .item_details_main {
   width: 90%;
-  height: 80%;
-  margin-left: 3%;
   padding: 0 1rem;
-  border-radius: 10px;
-  color: rgb(255 217 30);
-  border: 5px solid goldenrod;
-  background-color: rgb(27, 27, 27);
-  overflow-y: scroll;
 }
 .item_details_main img {
-  height: 50vh;
+  height: 30vh;
   margin-left: 1rem;
   margin-right: 3rem;
+  margin-bottom: 3rem;
   border-radius: 5px;
-  border: 3px solid rgb(255, 0, 212);
+  border: 3px solid rgb(255, 255, 255);
 }
 .item_details_main p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
 }
-.item_details_main_button {
+.item_details_main_data {
+  height: 70%;
+  margin: 1rem;
+  padding: 1rem;
+  overflow-y: scroll;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+.item_details_main_data::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+.item_details_main_data::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.item_details_main_data::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-bg-color);
+  border-radius: 5px;
+  outline: 1px solid var(--scrollbar-outline-color);
+}
+.item_details_shop_button {
   margin: 0.5rem;
   text-align: center;
 }
-.item_details_main_button a {
-  color: goldenrod;
+.item_details_shop_button a {
+  color: var(--item-details-shop-button-color);
   font-weight: 1000;
   text-decoration: none;
   font-size: 2.5rem;
 }
-.item_details_main_button a:hover {
-  color: rgb(247, 203, 94);
-  background-image: radial-gradient(
-    rgb(218, 165, 32, 0.5),
-    rgb(0, 0, 0, 0) 50%
-  );
+.item_details_shop_button a:hover {
+  color: var(--item-details-shop-button-color-hover);
 }
-.item_details_main_button a:active {
-  color: rgb(172, 147, 85);
-}
-.item_details_main_close_button {
-  align-self: center;
-  cursor: pointer;
-}
-.item_details_main_close_button:hover {
-  background-image: radial-gradient(
-    rgba(218, 44, 32, 0.5),
-    rgb(0, 0, 0, 0) 60%
-  );
+.item_details_shop_button a:active {
+  color: var(--item-details-shop-button-color-active);
 }
 
 /* About Page */
 #about {
-  /* color: whitesmoke; */
+  color: var(--about-text-color);
   font-size: 1.3rem;
-  background-image: url("https://media.istockphoto.com/id/1304225026/photo/top-view-of-mobile-phone-glasses-pen-and-notebook-written-with-about-us-on-wooden-background.jpg?s=612x612&w=0&k=20&c=YhbAlzZONGfWt-Qm5W10Z0-Z8waHkblhtZEbRh4E0bM=");
+  background-image: var(--about-bg-img-url);
   background-repeat: no-repeat;
   background-size: cover;
 }
 #about div {
-  padding: 13% 40% 20% 5%;
+  padding: 13% 40% 10% 5%;
+}
+
+.hidden {
+  display: none;
 }
