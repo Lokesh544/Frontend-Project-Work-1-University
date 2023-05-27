@@ -264,9 +264,6 @@ const data_2 = [
     ],
     website_link: "https://www.amazon.com/dp/B07176ZCWW",
   },
-];
-
-const data_3 = [
   {
     img: "https://m.media-amazon.com/images/I/71H4ddu8UXL._AC_UY395_.jpg",
     title:
@@ -341,9 +338,6 @@ const data_3 = [
     ],
     website_link: "https://www.amazon.com/dp/B08CKFWGV1",
   },
-];
-
-const data_4 = [
   {
     img: "https://m.media-amazon.com/images/I/41SNmg+eDaL._AC_.jpg",
     title: "Yonex AC402EX Towel Grip 100% Cotton GRAP",
@@ -448,9 +442,6 @@ const data_4 = [
     ],
     website_link: "https://www.amazon.com/dp/B000HEKHCA",
   },
-];
-
-const data_5 = [
   {
     img: "https://m.media-amazon.com/images/I/61eEHwPuiFL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
     title: "YONEX BG65 Badminton String USA Original Version",
@@ -529,9 +520,6 @@ const data_5 = [
     ],
     website_link: "https://www.amazon.com/dp/B01K4A16GM",
   },
-];
-
-const data_6 = [
   {
     img: "https://m.media-amazon.com/images/I/61LPZBLSeOL._AC_SX425_.jpg",
     title:
@@ -621,9 +609,6 @@ const data_6 = [
     },
     website_link: "https://www.amazon.com/dp/B0B4SRXWZ3",
   },
-];
-
-const data_7 = [
   {
     img: "https://m.media-amazon.com/images/I/81HS4QhFmtS._AC_SX425_.jpg",
     title: "Portable Tennis Net,Stainless Steel Poles Badminton Net Set",

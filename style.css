@@ -1,15 +1,73 @@
+:root {
+  --main-color: #8f2336;
+  --text-color: #fff;
+  --bg-color: #9b9a9a;
+}
+html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y proximity;
+}
 body {
   margin: 0;
+  width: 100%;
+  height: 100%;
   background-color: black;
+  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y proximity;
 }
+h1 {
+  margin: 0;
+}
+
+/* Scroolbar */
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 5px;
+  outline: 1px solid slategrey;
+}
+
+/* Page Section */
+.page {
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+/* Navigation Bar */
 #nav {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
+  transition: 0.2s ease-out;
+}
+#nav.shadow {
+  /* background: var(--bg-color); */
+  background: rgba(0, 0, 0, 0.13);
+  box-shadow: 4px 4px 20px rgba(50, 15, 55, 0.1);
+  transition: 0.5s ease;
+}
+#nav img {
+  height: 5vw;
+  transition: 0.5s ease;
+}
+#nav img.large {
+  height: 20vw;
+  transition: 0.5s ease-out;
 }
 .nav_div {
   display: flex;
   padding: 0.5rem;
-  background-color: black;
+  justify-content: space-evenly;
+  /* background-color: black; */
 }
 .nav_button {
   margin: 0.5rem;
@@ -27,105 +85,114 @@ body {
 .nav_button a:active {
   color: rgb(172, 147, 85);
 }
+
+/* Home Page */
 .home {
-  background-image: url("images/home_background.jpg");
+  /* background-image: url("images/home_background.jpg"); */
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/67876740851429.578fa00f361e8.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: 90%;
+  background-position-x: 30%;
+  background-position-y: 90%;
 }
-.home_text {
-  width: 60%;
-  padding: 5% 5% 0% 5%;
+.home div {
+  position: absolute;
+  top: 40%;
+  left: 60%;
 }
 .home h1 {
   color: white;
   text-shadow: 0px 0px 10px gold;
-  font-size: 3rem;
+  font-size: 6rem;
 }
-.home h2 {
-  color: rgb(255 233 79);
-  text-shadow: 2px 2px 3px blue;
-  font-size: 2rem;
-}
+
+/* Shop Page */
 .shop {
-  color: rgb(255 217 30);
+  /* color: rgb(255 217 30); */
   background-image: url("images/background.svg");
 }
-#shop_1 {
-  display: flex;
-  justify-content: center;
-}
-#shop_2 {
-  display: none;
-  justify-content: center;
-}
-.shop_1,
-.shop_2 {
+.shop .item {
+  margin-top: 2rem;
+  width: 20vw;
+  height: 39vh;
   display: flex;
   flex-direction: column;
-  width: 49%;
+  border: 5px solid whitesmoke;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  transition-property: "background", "border-color";
+  transition-duration: 0.1s;
 }
-.shop_3 {
+.shop .item:hover {
+  background: #e7e7e7;
+  border-color: #e7e7e7;
+}
+.shop .item:active {
+  background: #c7c7c7;
+  border-color: #c7c7c7;
+}
+.shop .item img {
+  height: 30vh;
+  border-radius: 30px;
+}
+.shop .item h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Shop Items */
+.shop_items_page {
+  height: 90vh;
+  overflow-x: scroll;
+}
+.shop_items_page::-webkit-scrollbar {
+  height: 0.5em;
+}
+.shop_items_page::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.shop_items_page::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 5px;
+  outline: 1px solid slategrey;
+}
+.shop_items {
   display: flex;
+  height: 88vh;
+  width: 100vw;
+  flex-wrap: wrap;
   flex-direction: column;
-  width: 80%;
+  justify-content: space-around;
 }
 .shop_item {
-  margin: 1rem 4rem;
-  background-image: radial-gradient(rgb(0, 0, 0, 0.8) 60%, rgb(0, 0, 0, 0));
-  flex-grow: 1;
-  flex-shrink: 1;
+  margin: 1rem 1rem;
+  width: 20vw;
+  height: 39vh;
   display: flex;
   flex-direction: column;
+  border: 5px solid whitesmoke;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  transition-property: "background", "border-color";
+  transition-duration: 0.1s;
 }
 .shop_item img {
-  margin: 10%;
-  border: 0.5rem solid rgb(255 200 0);
   border-radius: 30px;
 }
 .shop_item h3 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
+  text-align: center;
 }
-.shop_item p {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  font-size: 1.5rem;
+.shop_item:hover {
+  background: #e7e7e7;
+  border-color: #e7e7e7;
 }
-.shop_item button {
-  cursor: pointer;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  align-self: center;
-  background: #fff86e;
-  background-image: linear-gradient(to bottom, #fff86e, #fff86b);
-  border: none;
-  border-radius: 28px;
-  color: #000000;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+.shop_item:active {
+  background: #c7c7c7;
+  border-color: #c7c7c7;
 }
-.shop_item button:hover {
-  background: #ebe378;
-  background-image: linear-gradient(to bottom, #ebe378, #c9c35b);
-  text-decoration: none;
-}
-.shop_item button:active {
-  background: #c5bf66;
-  background-image: linear-gradient(to bottom, #c5bf66, #a39f4a);
-  text-decoration: none;
-}
-#about {
-  color: whitesmoke;
-  margin: 1% 5%;
-}
+
+/* Item Details Page */
 #item_details {
   /* display: none; */
   width: 100%;
@@ -191,4 +258,16 @@ body {
     rgba(218, 44, 32, 0.5),
     rgb(0, 0, 0, 0) 60%
   );
+}
+
+/* About Page */
+#about {
+  /* color: whitesmoke; */
+  font-size: 1.3rem;
+  background-image: url("https://media.istockphoto.com/id/1304225026/photo/top-view-of-mobile-phone-glasses-pen-and-notebook-written-with-about-us-on-wooden-background.jpg?s=612x612&w=0&k=20&c=YhbAlzZONGfWt-Qm5W10Z0-Z8waHkblhtZEbRh4E0bM=");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#about div {
+  padding: 13% 40% 20% 5%;
 }
